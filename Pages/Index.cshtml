@@ -1,0 +1,29 @@
+﻿@page
+@model Турнирная_сетка.Pages.IndexModel
+
+<h2>@Model.Tournament?.Name - Турнирная сетка</h2>
+
+@if (Model.Tournament == null)
+{
+    <p>Турнир не найден.</p>
+}
+else
+{
+    @foreach (var round in Model.Tournament.Rounds)
+    {
+        <h3>Раунд @round.RoundNumber</h3>
+        <div>
+            @foreach (var match in round.Matches)
+            {
+                <div class="match">
+                    <span>@match.Team1?.Name</span> VS <span>@match.Team2?.Name</span>
+                    <p>Статус: @match.Status</p>
+                    @if (match.Winner != null)
+                    {
+                        <p>Победитель: @match.Winner?.Name</p>
+                    }
+                </div>
+            }
+        </div>
+    }
+}

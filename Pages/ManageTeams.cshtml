@@ -1,0 +1,30 @@
+﻿@page
+@model Турнирная_сетка.Pages.ManageTeamsModel
+
+<h2>Управление командами</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Team.Name" class="control-label"></label>
+        <input asp-for="Team.Name" class="form-control" />
+        <span asp-validation-for="Team.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Team.Description" class="control-label"></label>
+        <textarea asp-for="Team.Description" class="form-control"></textarea>
+        <span asp-validation-for="Team.Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Team.LogoPath" class="control-label"></label>
+        <input asp-for="Team.LogoPath" class="form-control" />
+        <span asp-validation-for="Team.LogoPath" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Team.Discipline" class="control-label"></label>
+        <input asp-for="Team.Discipline" class="form-control" />
+        <span asp-validation-for="Team.Discipline" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Сохранить" class="btn btn-primary" />
+    </div>
+</form>
